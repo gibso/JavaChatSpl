@@ -14,11 +14,20 @@ import javachat.ui.ChatWindow;
  * @author DrLabman
  */
 public class JavaChat {
+	
+	public static class Conf {
+		public static boolean setUsername = false;
+		public static boolean setFontsize = true;
+		public static boolean setFonttype = true;
+		public static boolean setFontstyle = false;
+		public static boolean setAbout = false;
+	}
+	
 	/** The singleton instance of the chat window */
 	public static ChatWindow instance = null;
 	private static Server server;
 	private static Client client;
-	
+		 
 	public static void println(String text){
 		instance.println(text);
 	}
@@ -106,6 +115,7 @@ public class JavaChat {
 	 * @param args the command line arguments
 	 */
 	public static void main(String args[]) {
+		
 		/*
 		 * Set the Nimbus look and feel
 		 */
@@ -148,7 +158,6 @@ public class JavaChat {
 						client.disconnect();
 					}
 				}
-				
 			}
 		});
 		

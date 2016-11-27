@@ -136,9 +136,7 @@ public abstract class SocketController implements Runnable {
 		return disconnect;
 	}
 
-	/**
-	 * @param disconnect the disconnect to set
-	 */
+
 	public void disconnect() {
 		this.disconnect = true;
 		sendQuit();
@@ -148,15 +146,12 @@ public abstract class SocketController implements Runnable {
 	 * Each line that is received from the socket is sent to this method for
 	 * handling
 	 * 
-	 * @param sktCtrl The Socket controller that received the message
 	 * @param msg String received from the socket
 	 */
 	public abstract void receiveMsg(Packet msg);
 	
 	/**
 	 * When a socket is closed the call back is used to alert the creating class.
-	 * 
-	 * @param sktCtrl The Socket controller that disconnected
 	 */
 	public abstract void disconnected();
 }
