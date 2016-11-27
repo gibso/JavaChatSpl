@@ -1,0 +1,54 @@
+Feature Parameter:
+
+Wir haben ein bestehendes Java-Chat Programm erweitert. 
+Grundlage war das Gitproject "Dr Labman / JavaChat": https://github.com/DrLabman/JavaChat
+
+Wir haben den Quellcode um folgende Features erweitert:
+	- setUsername: Die Möglichkeit einen Username anzugeben
+	- setFontsize: Die Möglichkeit die Schriftgröße des Chats zu beeinflussen
+	- setFontstyle: Die Möglichkeit seinen Text zu stylen (noch nicht funktional implementiert)
+	- setFonttype: Die Möglichkeit die Schriftarten zu wechseln
+	- setAbout: Die Möglichkeit seine Emailadresse anzugeben und sein Geschlecht und Alter zu veröffentlichen
+
+Mittels Laufzeitparameter können diese Features in unserem Projekt an uns ausgeschaltet werden.
+Die Paramter werden dafür in der Unterklasse Conf hinterlegt.
+
+Konfiguration 1 - Grundlegendes Chatprogramm:
+	public static class Conf {
+		public static boolean setUsername = false;
+		public static boolean setFontsize = false;
+		public static boolean setFonttype = false;
+		public static boolean setFontstyle = false;
+		public static boolean setAbout = false;
+	}
+
+Konfiguration 2 - mit persönlicher Informationsangabe:
+	public static class Conf {
+		public static boolean setUsername = true;
+		public static boolean setFontsize = false;
+		public static boolean setFonttype = false;
+		public static boolean setFontstyle = false;
+		public static boolean setAbout = true;
+	}
+
+Konfiguration 3 - mit Textanpassung:
+	public static class Conf {
+		public static boolean setUsername = false;
+		public static boolean setFontsize = true;
+		public static boolean setFonttype = true;
+		public static boolean setFontstyle = false;
+		public static boolean setAbout = false;
+	}
+	
+
+Konfiguraiton 4 - mit persönlicher Informationsangabe und Textanpassung:
+	public static class Conf {
+		public static boolean setUsername = true;
+		public static boolean setFontsize = true;
+		public static boolean setFonttype = true;
+		public static boolean setFontstyle = false;
+		public static boolean setAbout = true;
+	}
+
+Alle Konfigurationen wurden getestet und funktionieren.
+
